@@ -4,7 +4,8 @@ from django.http import HttpResponse
 
 def index(request):
     menu = MenuItem.objects.all()
-    return render(request, 'index.html',{'menu': menu})
+    sorted_menu_items = sorted(menu, key=lambda menuItem: menuItem.name)
+    return render(request, 'index.html',{'menu': sorted_menu_items})
 
 def menu_item(request):
     return render(request, 'menu_details.html')
