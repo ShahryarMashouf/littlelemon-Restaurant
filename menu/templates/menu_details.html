@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: auto;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ menu_item.image }}" alt="{{ menu_item.name }}" class="menu_item-image">
+        <h1>{{ menu_item.name }}</h1>
+        <p><strong>Price:</strong> ${{ menu_item.price }}</p>
+        <p><strong>Description:</strong> {{ menu_item.description }}</p>
+    </div>
+</body>
+</html>
+{% endblock %}
